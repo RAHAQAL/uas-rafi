@@ -133,7 +133,7 @@
       }
 
         await axios
-          .post("http://localhost:3005/category", {
+          .post("http://localhost:3000/category", {
             name: name,
           })
           .then((response) => {
@@ -148,7 +148,7 @@
       const DeleteCategory = async (id) => {
         if (confirm("Are you sure"))
           await axios
-            .delete(`http://localhost:3005/category/${id}`)
+            .delete(`http://localhost:3000/category/${id}`)
             .then((response) => {
               console.log(response);
               GetCategory();
@@ -160,7 +160,7 @@
 
       const EditCategory = async (id) => {
         await axios
-          .get(`http://localhost:3005/category/${id}`)
+          .get(`http://localhost:3000/category/${id}`)
           .then((response) => {
             const category = response.data;
             document.getElementById("name").value = category.name;
@@ -188,7 +188,7 @@
       }
 
         await axios
-          .patch(`http://localhost:3005/category/${id}`, {
+          .patch(`http://localhost:3000/category/${id}`, {
             name: name,
           })
           .then((response) => {
